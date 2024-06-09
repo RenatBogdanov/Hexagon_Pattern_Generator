@@ -54,6 +54,11 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::TrackBar^ trackBar2;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::CheckBox^ checkBox3;
+	private: System::Windows::Forms::TrackBar^ trackBar3;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label5;
 
 
 
@@ -81,6 +86,11 @@ namespace CppCLRWinFormsProject {
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->trackBar3 = (gcnew System::Windows::Forms::TrackBar());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->trackBar2 = (gcnew System::Windows::Forms::TrackBar());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
@@ -100,6 +110,7 @@ namespace CppCLRWinFormsProject {
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->groupBox1->SuspendLayout();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -119,6 +130,11 @@ namespace CppCLRWinFormsProject {
 			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->trackBar3);
+			this->panel2->Controls->Add(this->label6);
+			this->panel2->Controls->Add(this->button6);
+			this->panel2->Controls->Add(this->label5);
+			this->panel2->Controls->Add(this->checkBox3);
 			this->panel2->Controls->Add(this->trackBar2);
 			this->panel2->Controls->Add(this->label4);
 			this->panel2->Controls->Add(this->button5);
@@ -135,21 +151,71 @@ namespace CppCLRWinFormsProject {
 			this->panel2->Size = System::Drawing::Size(242, 357);
 			this->panel2->TabIndex = 1;
 			// 
+			// trackBar3
+			// 
+			this->trackBar3->Location = System::Drawing::Point(3, 309);
+			this->trackBar3->Maximum = 5;
+			this->trackBar3->Minimum = 1;
+			this->trackBar3->Name = L"trackBar3";
+			this->trackBar3->Size = System::Drawing::Size(227, 45);
+			this->trackBar3->TabIndex = 15;
+			this->trackBar3->Value = 3;
+			this->trackBar3->Scroll += gcnew System::EventHandler(this, &Form1::trackBar3_Scroll);
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(4, 293);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(49, 13);
+			this->label6->TabIndex = 14;
+			this->label6->Text = L"Частота";
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(121, 270);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(118, 23);
+			this->button6->TabIndex = 13;
+			this->button6->Text = L"Выбрать";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Form1::button6_Click);
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(4, 275);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(73, 13);
+			this->label5->TabIndex = 12;
+			this->label5->Text = L"Цвет фигуры";
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->Location = System::Drawing::Point(3, 247);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(170, 17);
+			this->checkBox3->TabIndex = 11;
+			this->checkBox3->Text = L"Случайно закрасить фигуры";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &Form1::checkBox3_CheckedChanged);
+			// 
 			// trackBar2
 			// 
-			this->trackBar2->Location = System::Drawing::Point(6, 242);
-			this->trackBar2->Maximum = 20;
+			this->trackBar2->Location = System::Drawing::Point(3, 191);
+			this->trackBar2->Maximum = 14;
 			this->trackBar2->Minimum = 1;
 			this->trackBar2->Name = L"trackBar2";
-			this->trackBar2->Size = System::Drawing::Size(233, 45);
+			this->trackBar2->Size = System::Drawing::Size(230, 45);
 			this->trackBar2->TabIndex = 10;
-			this->trackBar2->Value = 1;
+			this->trackBar2->Value = 2;
 			this->trackBar2->Scroll += gcnew System::EventHandler(this, &Form1::trackBar2_Scroll);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(6, 226);
+			this->label4->Location = System::Drawing::Point(4, 175);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(86, 13);
 			this->label4->TabIndex = 9;
@@ -181,7 +247,7 @@ namespace CppCLRWinFormsProject {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(3, 147);
+			this->label3->Location = System::Drawing::Point(3, 127);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(87, 13);
 			this->label3->TabIndex = 6;
@@ -189,19 +255,19 @@ namespace CppCLRWinFormsProject {
 			// 
 			// trackBar1
 			// 
-			this->trackBar1->Location = System::Drawing::Point(3, 174);
+			this->trackBar1->Location = System::Drawing::Point(3, 143);
 			this->trackBar1->Maximum = 64;
 			this->trackBar1->Minimum = 24;
 			this->trackBar1->Name = L"trackBar1";
-			this->trackBar1->Size = System::Drawing::Size(236, 45);
+			this->trackBar1->Size = System::Drawing::Size(230, 45);
 			this->trackBar1->TabIndex = 5;
-			this->trackBar1->Value = 24;
+			this->trackBar1->Value = 36;
 			this->trackBar1->Scroll += gcnew System::EventHandler(this, &Form1::trackBar1_Scroll);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(3, 63);
+			this->label2->Location = System::Drawing::Point(4, 68);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(61, 13);
 			this->label2->TabIndex = 4;
@@ -210,7 +276,7 @@ namespace CppCLRWinFormsProject {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(3, 33);
+			this->label1->Location = System::Drawing::Point(4, 38);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(90, 13);
 			this->label1->TabIndex = 3;
@@ -300,6 +366,7 @@ namespace CppCLRWinFormsProject {
 			this->groupBox1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->EndInit();
 			this->panel1->ResumeLayout(false);
@@ -311,38 +378,38 @@ namespace CppCLRWinFormsProject {
 
 	double	size = 36;
 	bool	draw_grid = false,
-			draw_lines = true;
+			draw_lines = true,
+			random_fill = false;
+	float	pen_size = 1.0f;
+	int fill_frequency = 2;
 
-	float pen_size = 1.0f;
-
-	Color pattern_color = Color::Black;
-	Color background_color = Color::White;
+	Color	pattern_color = Color::Black;
+	Color	background_color = Color::White;
+	Color	fill_color = Color::Green;
 
 	private: void draw_pattern() {
-		Bitmap^ bmp = gcnew Bitmap(pictureBox1->Width, pictureBox1->Height);
-		Graphics^ g = pictureBox1->CreateGraphics();
+		Bitmap		^bmp = gcnew Bitmap(pictureBox1->Width, pictureBox1->Height);
+		Graphics	^g = pictureBox1->CreateGraphics();
+		Pen			^pen = gcnew Pen(Color::Blue, 1.0f),
+					^pen_black = gcnew Pen(pattern_color, pen_size);
+		Brush^ brush = gcnew SolidBrush(fill_color);
+		
+		double		height = size * pow(3, 0.5),
+					width = size * 2,
+					zero_point_x = -1.5 * width,
+					zero_point_y = -3 * height,
+					step_x = zero_point_x,
+					step_y = zero_point_y;
+		int			modifier_i = 0;
+
 		g = Graphics::FromImage(bmp);
 		pictureBox1->Image = bmp;
-
-		Pen^ pen = gcnew Pen(Color::Blue, 1.0f);
-		Pen^ pen_black = gcnew Pen(pattern_color, pen_size);
-
 		g->Clear(background_color);
-
-		double	height = size * pow(3, 0.5),
-				width = size * 2,
-				zero_point_x = -1.5 * width,
-				zero_point_y = -3 * height,
-				step_x = zero_point_x,
-				step_y = zero_point_y;
-
-		int		modifier_i = 0;
+		srand(time(0));
 
 		if (draw_grid) {
 			for (int i = 0; i <= 10; i++) {
 				g->DrawLine(pen, 0, height * i, 1024, height * i);
-			}
-			for (int i = 0; i <= 10; i++) {
 				g->DrawLine(pen, width * i, 0, width * i, 1024);
 			}
 		}
@@ -359,6 +426,9 @@ namespace CppCLRWinFormsProject {
 
 				array <Point>^ points = { p1,p2,p3,p4,p5,p6 };
 
+				if ((random_fill) && (rand() % (6-fill_frequency) == 0)) {
+					g->FillPolygon(brush, points);
+				}
 				g->DrawPolygon(pen_black, points);
 
 				if (draw_lines) {
@@ -366,7 +436,6 @@ namespace CppCLRWinFormsProject {
 						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + width, 0.5 * height + step_y));
 						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 0.75 * width, step_y));
 						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 0.75 * width, height + step_y));
-
 						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 1.75 * width / 2, step_y + 0.25 * height));
 						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 1.75 * width / 2, step_y + 0.75 * height));
 					}
@@ -374,7 +443,6 @@ namespace CppCLRWinFormsProject {
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.25 * width, step_y + height));
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.75 * width, step_y + height));
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x, 0.5 * height + step_y));
-
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.5 * width, step_y + height));
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.25 * width / 2, 0.75 * height + step_y));
 					}
@@ -382,7 +450,6 @@ namespace CppCLRWinFormsProject {
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.25 * width, step_y));
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.75 * width, step_y));
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x, step_y + 0.5 * height));
-
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.5 * width, step_y));
 						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.25 * width / 2, step_y + 0.25 * height));
 
@@ -447,6 +514,21 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void trackBar2_Scroll(System::Object^ sender, System::EventArgs^ e) {
 	pen_size = trackBar2->Value;
+}
+private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	random_fill ^= 1;
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	ColorDialog^ colorDialog = gcnew ColorDialog();
+
+	if (colorDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+	{
+		Color selectedColor = colorDialog->Color;
+		fill_color = selectedColor;
+	}
+}
+private: System::Void trackBar3_Scroll(System::Object^ sender, System::EventArgs^ e) {
+	fill_frequency = trackBar3->Value;
 }
 };
 
