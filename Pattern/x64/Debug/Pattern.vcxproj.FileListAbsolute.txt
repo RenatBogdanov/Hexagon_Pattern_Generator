@@ -1,0 +1,3 @@
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Pattern\x64\Debug\Pattern.vcxproj.AssemblyReference.cache
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Pattern\x64\Debug\Pattern.Form1.resources
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Pattern\x64\Debug\Pattern.vcxproj.GenerateResource.cache
