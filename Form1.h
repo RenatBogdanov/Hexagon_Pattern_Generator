@@ -382,18 +382,18 @@ namespace CppCLRWinFormsProject {
 			draw_lines = true,
 			random_fill = false;
 	float	pen_size = 1.0f;
-	int fill_frequency = 2;
+	int		fill_frequency = 2;
 
-	Color	pattern_color = Color::Black;
-	Color	background_color = Color::White;
-	Color	fill_color = Color::Green;
+	Color	pattern_color = Color::Black,
+			background_color = Color::White,
+			fill_color = Color::Green;
 
 	private: void draw_pattern() {
 		Bitmap		^bmp = gcnew Bitmap(pictureBox1->Width, pictureBox1->Height);
 		Graphics	^g = pictureBox1->CreateGraphics();
-		Pen			^pen = gcnew Pen(Color::Blue, 1.0f),
-					^pen_black = gcnew Pen(pattern_color, pen_size);
-		Brush^ brush = gcnew SolidBrush(fill_color);
+		Pen			^pen_grid = gcnew Pen(Color::Blue, 1.0f),
+					^pen_lines = gcnew Pen(pattern_color, pen_size);
+		Brush^		brush_fill = gcnew SolidBrush(fill_color);
 		
 		double		height = size * pow(3, 0.5),
 					width = size * 2,
@@ -410,8 +410,8 @@ namespace CppCLRWinFormsProject {
 
 		if (draw_grid) {
 			for (int i = 0; i <= 10; i++) {
-				g->DrawLine(pen, 0, height * i, 1024, height * i);
-				g->DrawLine(pen, width * i, 0, width * i, 1024);
+				g->DrawLine(pen_grid, 0, height * i, 1024, height * i);
+				g->DrawLine(pen_grid, width * i, 0, width * i, 1024);
 			}
 		}
 
@@ -428,31 +428,31 @@ namespace CppCLRWinFormsProject {
 				array <Point>^ points = { p1,p2,p3,p4,p5,p6 };
 
 				if ((random_fill) && (rand() % (6-fill_frequency) == 0)) {
-					g->FillPolygon(brush, points);
+					g->FillPolygon(brush_fill, points);
 				}
-				g->DrawPolygon(pen_black, points);
+				g->DrawPolygon(pen_lines, points);
 
 				if (draw_lines) {
 					if (y % 3 == 0) {
-						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + width, 0.5 * height + step_y));
-						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 0.75 * width, step_y));
-						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 0.75 * width, height + step_y));
-						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 1.75 * width / 2, step_y + 0.25 * height));
-						g->DrawLine(pen_black, Point(step_x, 0.5 * height + step_y), Point(step_x + 1.75 * width / 2, step_y + 0.75 * height));
+						g->DrawLine(pen_lines, Point(step_x, 0.5 * height + step_y), Point(step_x + width, 0.5 * height + step_y));
+						g->DrawLine(pen_lines, Point(step_x, 0.5 * height + step_y), Point(step_x + 0.75 * width, step_y));
+						g->DrawLine(pen_lines, Point(step_x, 0.5 * height + step_y), Point(step_x + 0.75 * width, height + step_y));
+						g->DrawLine(pen_lines, Point(step_x, 0.5 * height + step_y), Point(step_x + 1.75 * width / 2, step_y + 0.25 * height));
+						g->DrawLine(pen_lines, Point(step_x, 0.5 * height + step_y), Point(step_x + 1.75 * width / 2, step_y + 0.75 * height));
 					}
 					else if (y % 3 == 2) {
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.25 * width, step_y + height));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.75 * width, step_y + height));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x, 0.5 * height + step_y));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.5 * width, step_y + height));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.25 * width / 2, 0.75 * height + step_y));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.25 * width, step_y + height));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.75 * width, step_y + height));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y), Point(step_x, 0.5 * height + step_y));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.5 * width, step_y + height));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y), Point(step_x + 0.25 * width / 2, 0.75 * height + step_y));
 					}
 					else {
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.25 * width, step_y));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.75 * width, step_y));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x, step_y + 0.5 * height));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.5 * width, step_y));
-						g->DrawLine(pen_black, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.25 * width / 2, step_y + 0.25 * height));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.25 * width, step_y));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.75 * width, step_y));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y + height), Point(step_x, step_y + 0.5 * height));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.5 * width, step_y));
+						g->DrawLine(pen_lines, Point(step_x + 0.75 * width, step_y + height), Point(step_x + 0.25 * width / 2, step_y + 0.25 * height));
 
 					}
 				}

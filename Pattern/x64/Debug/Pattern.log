@@ -1,9 +1,9 @@
 ﻿  CppCLR_WinFormsProject.cpp
 C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(409,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(413,50): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(413,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(414,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(414,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(413,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(413,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(414,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(414,33): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(421,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(421,35): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Ренат\Desktop\2 семестр\Структурное программирование\Курсовая\Pattern\Form1.h(422,43): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
